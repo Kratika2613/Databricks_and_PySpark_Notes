@@ -117,7 +117,17 @@ The Apache Spark will help us to process a large data set into a distributed (wo
 
 # Day 3
 
-# Creating Databricks Free edition Account
+- Creating Databricks Free edition Account
+
+**Databricks Overview**
+- On the left side panel we have :-
+
+- Workspace : This is the main option in the workspace, where all our development work is done.
+     -> Under workspace we have > Users
+     -> In users option we try to create all kind of notebook, here only we write our PySpark code.
+  
+
+
 
 
 
