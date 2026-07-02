@@ -54,7 +54,7 @@ The Apache Spark will help us to process a large data set into a distributed (wo
 -- Databricks - adds a firendly UI, auto-cluster management, collaborative notebook, optimized connectors(it provide connectors to connect to different databases), governance tools, ML lifecycle support, and Delta Lake for reliable data.
 -- This means in databricks UI itself, we've one button to create a cluster (auto-cluster will be created). If we're not using cluster automatically it will be shutdown.
 
-********************************************************************************
+***********************************************************************************************************************************
 # Day 2
 
 1. Setup & infrastructure
@@ -75,7 +75,49 @@ The Apache Spark will help us to process a large data set into a distributed (wo
 3. Data Storage ->
 
 -- Spark Alone -> Reads/writes from external storage (S3, HDFS, Azure Blob), but no built-in transactionasl layer.
--- Databricks -> Uses Delta Lake for ACID
+-- Databricks -> Uses Delta Lake for ACID transactions, schema enforcement, and time travel.
+
+-- ACID = ATOMICITY, CONSISTENCY, ISOLATION, DURABILITY
+-- ATOMICITY -> Either everything happens or nothing  happens.
+-- CONSISTENCY -> Data should always follow rules/valid state.
+-- ISOLATION -> Multiple user can work at same time, but they don't disturb each other.
+-- DURABILITY -> Once data is saved, it will not be lost even if system crashes.
+
+4. Data Governance & Security ->
+
+-- Spark alone -> You handle permission manually at the file system or storage leavel.
+-- Databricks -> Unity Catalog provides centralized data access control, auditing, and compliance.
+
+5. Collaboration ->
+
+-- Spark alone -> No built-in multi user interface - sharing requires exporting scripts and  files.
+-- Databricks -> Collaborative notebooks where multiple user can work together.
+
+6. Workflow Automation ->
+
+-- Spark Alone -> Requires external schedulers(**Airflow** - Apache Airflow is a tool used to schedule manage, and monitor complex data workflows (multiple tasks in order), **Cron** - it is a simple scheduler used to run tasks automatically at fixed time intervals in Linux/ Unix systems) for automation.
+-- Databricks -> Built-in jobs scheduler with monitoring, retry policies, and alerts.
+
+7. Machine Learning ->
+
+-- Spark Alone -> MLib for basic ML, but no built-in experiment tracking or deployment tools.
+-- Databricks -> MLflow integrated for ML lifecycle management (tracking, registry, deployment).
+
+8. Optimization ->
+
+-- Spark Alone -> you manually tune configuration for performance.
+-- Databricks -> Auto-optimizations
+
+9. Integrations ->
+
+-- Spark Alone -- You set up JDBC/ODBC drivers manually for BI tools.
+-- Databricks -- Native connectors to Power BI, Tableau, Looker, Snowflake, etc.
+
+*************************************************************************************************************************************
+
+# Day 3
+
+# Creating Databricks Free edition Account
 
 
 
