@@ -124,10 +124,32 @@ The Apache Spark will help us to process a large data set into a distributed (wo
 
 - Workspace : This is the main option in the workspace, where all our development work is done.
      -> Under workspace we have > Users
-     -> In users option we try to create all kind of notebook, here only we write our PySpark code.
-  
+     -> In users option we try to create all kind of notebook, here only we write our PySpark code, and do all our development activity.
+     -> Then, we have create option (on right side) > here we can create folder like..(practical).
+     -> Under folder I can create any kind of notebook.
+     -> Here we can write different kind of code like R language, Scala, python, SQL.
 
+-- Now, if I want to execute any code I require a computation, a cluster.
+-- So, on right hand side there is one option - Connect(Serverless)
+-- Here in free edition by default a serverless is available that we can use for processing.
 
+-- When I rename the notebook. If i right click on the notebook with name test or something. There are so many options.
+-- Like: **clone** - creating similar kind of notebook.
 
+-- **Unity Catalog** : Here we can see all our data.
+                      -> In this we will be able to manage our data also.
+                      -> In this I can also do access control.
+
+-- **Jobs & pipelines** : Here we can create a job, and can also schedule them on weekly and monthly basis.
+
+-- **Genie** : It is an AI.
+
+********************************************************************************
+
+# Day 4
+
+-- What is the Databricks Lakehouse ?
+
+-- 
 
 
