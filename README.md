@@ -1,155 +1,913 @@
-# Databricks_and_PySpark_Notes
-My learning notes for Databricks and PySpark.
+# Databricks and PySpark Notes
 
-# Day - 1 
-# What is Databricks -
-It is a one kind of unified analytics platform, that will help you - 
--- To manage your data, 
--- To process your data, 
--- To analyze your data into a one single place in a better way.
+My learning notes for **Databricks** and **PySpark**.
 
-** imp **
-It is built on top of Apache Spark but adds many enterprise features -
--- From the above line few people think like **Databricks** is just kind of the **environment for the Apache Spark**. But Databricks is not just a Apache Spark. It has many other features :-
+***
 
-1. Databricks is providing the one kind of workspace where data engineer, data analyst, data scientist, will work into a one single workspace.
--- They will create there own notebook.
--- They can see other's developer notebook.
--- They can work together and, they can share their tables.
+# Day 1
 
--- It provides a collaborative workspace for data engineer, data analyst, data scientist.
+# What is Databricks?
 
-2. Support for data lakes, data warehouse and machine learning.
--- Databricks provide **Data lakehouse** capability :-
--- This means it provide a capability of **data lake** as well as **data warehouse**.
--- DataLake means we can store structure, unstructure every kind of data into a data lake.
--- Because we've a lakehouse capability, so we can also use a data warehouse capability. So, that we can quickly do a analytics in a faster way.
+## Definition
 
-3. Delta lake technology for reliablity, governance, and speed
--- Delta lake is a technology that makes data better and easier to manage.
--- Reliability means data is safe and accurate.
--- Governance means data is controlled and organized.
--- Speed means data is processed quickly.
+**Databricks** is a **Unified Analytics Platform** that helps organizations:
 
-# What is Apache Spark -
--- Apache Spark is an open-source distributed computing engine used to process large amount of data.
--- Very fast compared to older frameworks like Hadoop MapReduce.
--- Can run batch, streaming, SQL, ML, and graph workloads.
--- Requires you to manage clusters, storage, integrations, and scaling manually.
+* Manage data
+* Process data
+* Analyze data
 
-The Apache Spark will help us to process a large data set into a distributed (work is divided across many computers) manner. And, it process your data in a memory itself. So, it is very fast.
+from a single platform.
 
--- What is a cluster -
- A cluster is a group of computers that work together to process large amount of data.
+It is built on top of **Apache Spark** and provides many enterprise-level features that make big data processing easier, faster, and more efficient.
 
- -- Managing cluster means setting up, monitoring, scaling, and maintaining those computers.
+## Key Points
 
- -- Why is Databricks easier ?
- -- Apache Spark : You **manage the cluster yourself**.
- -- Databricks : Databricks ,**manages the cluster for you**, so you can focus on **writing Spark code**.
+### Databricks is More Than Just Apache Spark
 
--- When we already have Apache Spark that help to process large datasets, then why do we need a Databricks ?
--- Spark - If we're using spark alone no databricks then, it is has fast distributed processing, but you must manage clusters (and, managing cluster is a kind of difficult thing, and the manpower is required, and it is costly also), storage, and integration manually.
+Many people think Databricks is only a platform to run Spark code.
 
--- Databricks - adds a firendly UI, auto-cluster management, collaborative notebook, optimized connectors(it provide connectors to connect to different databases), governance tools, ML lifecycle support, and Delta Lake for reliable data.
--- This means in databricks UI itself, we've one button to create a cluster (auto-cluster will be created). If we're not using cluster automatically it will be shutdown.
+This is not true.
 
-***********************************************************************************************************************************
+Databricks uses Apache Spark as its processing engine, but it also provides additional features such as:
+
+* Collaborative Workspace
+* Cluster Management
+* Delta Lake
+* Data Governance
+* Machine Learning Support
+* Workflow Automation
+* Security and Access Control
+* Performance Optimization
+
+***
+
+## 1. Collaborative Workspace
+
+Databricks provides a **collaborative workspace** where:
+
+* Data Engineers
+* Data Analysts
+* Data Scientists
+
+can work together on the same platform.
+
+### Features
+
+* Create personal notebooks.
+* View notebooks created by other developers.
+* Share notebooks and tables.
+* Collaborate in real time.
+* Work in a common development environment.
+
+### Simple Explanation
+
+Instead of using separate tools for different teams, Databricks provides a single workspace where everyone can collaborate efficiently.
+
+***
+
+## 2. Support for Data Lake, Data Warehouse, and Machine Learning
+
+Databricks supports **Lakehouse Architecture**, which combines the capabilities of both a Data Lake and a Data Warehouse.
+
+### Data Lake
+
+A Data Lake can store:
+
+* Structured data
+* Semi-structured data
+* Unstructured data
+
+Examples:
+
+* CSV files
+* JSON files
+* Images
+* Videos
+* Log files
+
+### Data Warehouse
+
+A Data Warehouse provides:
+
+* Fast analytics
+* High query performance
+* Reporting capabilities
+* Structured data management
+
+### Lakehouse
+
+A Lakehouse combines:
+
+* Flexibility of a Data Lake
+* Performance of a Data Warehouse
+
+### Simple Explanation
+
+With Databricks Lakehouse, organizations do not need separate systems for storage and analytics.
+
+***
+
+## 3. Delta Lake Technology
+
+Databricks uses **Delta Lake** to provide:
+
+* Reliability
+* Governance
+* Performance Optimization
+
+### Reliability
+
+Ensures data remains:
+
+* Accurate
+* Consistent
+* Safe
+
+### Governance
+
+Helps with:
+
+* Data control
+* Security
+* Compliance
+* Data management
+
+### Performance
+
+Provides:
+
+* Faster processing
+* Faster queries
+* Optimized analytics workloads
+
+### Simple Explanation
+
+Delta Lake makes data more reliable and easier to manage while improving performance.
+
+***
+
+# What is Apache Spark?
+
+## Definition
+
+**Apache Spark** is an **open-source distributed computing engine** used to process large amounts of data efficiently.
+
+It is designed for **big data processing** and supports both batch and real-time workloads.
+
+## Key Points
+
+* Open-source framework.
+* Distributed data processing engine.
+* Processes massive datasets.
+* Faster than Hadoop MapReduce.
+* Supports multiple workloads.
+
+### Supports
+
+* Batch Processing
+* Streaming Processing
+* Spark SQL
+* Machine Learning
+* Graph Processing
+
+***
+
+## Why Apache Spark is Fast?
+
+### In-Memory Processing
+
+Spark processes data primarily in **memory (RAM)** rather than continuously reading from disk.
+
+### Benefits
+
+* Faster execution
+* Reduced disk I/O
+* Better performance
+* Efficient iterative processing
+
+### Simple Explanation
+
+Because data stays in memory during processing, Spark can execute jobs much faster than traditional disk-based frameworks.
+
+***
+
+## Distributed Computing
+
+Spark follows a **distributed computing architecture**.
+
+### Meaning
+
+A large task is divided into multiple smaller tasks.
+
+These tasks are then executed simultaneously across multiple computers.
+
+### Benefits
+
+* Faster processing
+* Horizontal scalability
+* Better resource utilization
+
+### Simple Explanation
+
+Instead of one machine doing all the work, many machines work together to process data.
+
+***
+
+# What is a Cluster?
+
+## Definition
+
+A **cluster** is a group of computers (nodes) that work together to process large volumes of data.
+
+### Cluster Management Includes
+
+* Cluster setup
+* Resource provisioning
+* Monitoring
+* Scaling
+* Security configuration
+* Maintenance
+
+### Simple Explanation
+
+A cluster combines multiple machines into one processing environment for handling big data workloads.
+
+***
+
+# Why is Databricks Easier than Spark?
+
+## Apache Spark
+
+When using Spark alone:
+
+* You manage clusters manually.
+* You configure infrastructure manually.
+* You handle storage integrations.
+* You monitor performance.
+* You perform scaling operations.
+
+### Challenges
+
+* Requires dedicated manpower.
+* Higher maintenance effort.
+* Increased operational cost.
+
+***
+
+## Databricks
+
+Databricks simplifies Spark usage by providing:
+
+* Friendly User Interface
+* Auto Cluster Management
+* Collaborative Notebooks
+* Optimized Connectors
+* Governance Tools
+* ML Lifecycle Support
+* Delta Lake Integration
+
+### Auto Cluster Management
+
+Databricks allows cluster creation with just a few clicks.
+
+Features include:
+
+* Auto-scaling
+* Auto-start
+* Auto-termination
+* Monitoring
+
+### Simple Explanation
+
+Databricks handles infrastructure-related tasks, allowing engineers to focus primarily on development and analytics.
+
+***
+
+# Why Do We Need Databricks if We Already Have Apache Spark?
+
+## Apache Spark
+
+Spark provides:
+
+* Fast distributed processing
+* Scalability
+* In-memory computation
+
+However, users must manage:
+
+* Clusters
+* Storage
+* Security
+* Integrations
+* Monitoring
+
+manually.
+
+***
+
+## Databricks
+
+Databricks adds:
+
+* Unified Workspace
+* Auto Cluster Management
+* Collaborative Development
+* Native Integrations
+* Delta Lake
+* Governance Tools
+* Machine Learning Support
+* Performance Optimization
+
+### Simple Explanation
+
+Spark is powerful for processing data, while Databricks makes Spark easier to use at an enterprise level.
+
+***
+
 # Day 2
 
-1. Setup & infrastructure
+# Databricks vs Spark Alone
 
--- Spark Alone -> 
-- You have to install,
-- configure,
-- manage your own clusters (on-premise(means Company's own servers) or cloud(means servers on the internet managed by a cloud provider)).
+## 1. Setup and Infrastructure
 
--- Databricks ->
--- Fully managed service - just click to create clusters, no manual setup.
+### Spark Alone
 
-2. Cluster Management ->
+You must:
 
--- Spark Alone -> You must manually scale up/down, monitor, and shut down clusters.
--- Databricks -> Auto-scaling clusters that start/stop based on workload to save cost.
+* Install Spark
+* Configure Spark
+* Create clusters
+* Manage infrastructure
 
-3. Data Storage ->
+Deployment can be:
 
--- Spark Alone -> Reads/writes from external storage (S3, HDFS, Azure Blob), but no built-in transactionasl layer.
--- Databricks -> Uses Delta Lake for ACID transactions, schema enforcement, and time travel.
+* On-premise (company-owned servers)
+* Cloud-based servers
 
--- ACID = ATOMICITY, CONSISTENCY, ISOLATION, DURABILITY
--- ATOMICITY -> Either everything happens or nothing  happens.
--- CONSISTENCY -> Data should always follow rules/valid state.
--- ISOLATION -> Multiple user can work at same time, but they don't disturb each other.
--- DURABILITY -> Once data is saved, it will not be lost even if system crashes.
+### Databricks
 
-4. Data Governance & Security ->
+* Fully managed platform.
+* No manual setup required.
+* Clusters can be created with a few clicks.
 
--- Spark alone -> You handle permission manually at the file system or storage leavel.
--- Databricks -> Unity Catalog provides centralized data access control, auditing, and compliance.
+### Remember
 
-5. Collaboration ->
+**Databricks abstracts infrastructure complexity.**
 
--- Spark alone -> No built-in multi user interface - sharing requires exporting scripts and  files.
--- Databricks -> Collaborative notebooks where multiple user can work together.
+***
 
-6. Workflow Automation ->
+## 2. Cluster Management
 
--- Spark Alone -> Requires external schedulers(**Airflow** - Apache Airflow is a tool used to schedule manage, and monitor complex data workflows (multiple tasks in order), **Cron** - it is a simple scheduler used to run tasks automatically at fixed time intervals in Linux/ Unix systems) for automation.
--- Databricks -> Built-in jobs scheduler with monitoring, retry policies, and alerts.
+### Spark Alone
 
-7. Machine Learning ->
+You must manually:
 
--- Spark Alone -> MLib for basic ML, but no built-in experiment tracking or deployment tools.
--- Databricks -> MLflow integrated for ML lifecycle management (tracking, registry, deployment).
+* Scale clusters up/down
+* Monitor clusters
+* Shut down clusters
+* Manage resources
 
-8. Optimization ->
+### Databricks
 
--- Spark Alone -> you manually tune configuration for performance.
--- Databricks -> Auto-optimizations
+Provides:
 
-9. Integrations ->
+* Auto-scaling
+* Auto-termination
+* Built-in monitoring
+* Resource optimization
 
--- Spark Alone -- You set up JDBC/ODBC drivers manually for BI tools.
--- Databricks -- Native connectors to Power BI, Tableau, Looker, Snowflake, etc.
+### Simple Explanation
 
-*************************************************************************************************************************************
+Databricks automatically manages cluster resources based on workload requirements.
+
+***
+
+## 3. Data Storage
+
+### Spark Alone
+
+Can read/write from:
+
+* Amazon S3
+* HDFS
+* Azure Blob Storage
+
+However, Spark does not provide a built-in transactional layer.
+
+### Databricks
+
+Uses **Delta Lake** and provides:
+
+* ACID Transactions
+* Schema Enforcement
+* Time Travel
+* Reliable Storage Layer
+
+***
+
+# ACID Properties
+
+## ACID = Atomicity + Consistency + Isolation + Durability
+
+### Atomicity
+
+Either all operations succeed or none of them succeed.
+
+**Example:** If a transaction has 5 steps and step 4 fails, all previous steps are rolled back.
+
+***
+
+### Consistency
+
+Data always remains in a valid state according to defined rules.
+
+***
+
+### Isolation
+
+Multiple users can perform operations simultaneously without affecting each other's transactions.
+
+***
+
+### Durability
+
+Once data is committed, it remains saved even if the system crashes.
+
+***
+
+## Remember
+
+**ACID properties ensure data reliability and transactional consistency.**
+
+***
+
+# 4. Data Governance and Security
+
+## Spark Alone
+
+* Permissions handled manually.
+* Access control managed at file or storage level.
+
+## Databricks
+
+Uses **Unity Catalog** for:
+
+* Centralized Data Governance
+* Access Control
+* Auditing
+* Compliance Management
+
+### Simple Explanation
+
+Unity Catalog provides one place to manage permissions and monitor data access.
+
+***
+
+# 5. Collaboration
+
+## Spark Alone
+
+* No built-in multi-user workspace.
+* Scripts must be shared manually.
+
+## Databricks
+
+Provides:
+
+* Shared notebooks
+* Team collaboration
+* Centralized development environment
+
+### Simple Explanation
+
+Multiple users can work on the same project without using separate tools.
+
+***
+
+# 6. Workflow Automation
+
+## Spark Alone
+
+Requires external schedulers.
+
+### Apache Airflow
+
+Apache Airflow is a workflow orchestration tool used to:
+
+* Schedule workflows
+* Manage pipelines
+* Monitor tasks
+
+### Cron
+
+Cron is a lightweight scheduler used in Linux/Unix systems to run tasks automatically at specific intervals.
+
+***
+
+## Databricks
+
+Provides a built-in scheduler with:
+
+* Monitoring
+* Retry Policies
+* Alerts
+* Job Scheduling
+
+### Simple Explanation
+
+Databricks eliminates the need for separate scheduling tools for many workloads.
+
+***
+
+# 7. Machine Learning
+
+## Spark Alone
+
+Uses **MLlib**.
+
+Limitations:
+
+* Basic ML functionality
+* No experiment tracking
+* No model registry
+* No deployment management
+
+***
+
+## Databricks
+
+Uses **MLflow** for complete ML Lifecycle Management.
+
+### Features
+
+* Experiment Tracking
+* Model Registry
+* Model Versioning
+* Model Deployment
+
+### Remember
+
+**MLflow = End-to-End ML Lifecycle Management**
+
+***
+
+# 8. Performance Optimization
+
+## Spark Alone
+
+Performance tuning must be done manually.
+
+Examples:
+
+* Memory tuning
+* Resource tuning
+* Spark configurations
+
+## Databricks
+
+Provides:
+
+* Auto Optimization
+* Performance Enhancements
+* Query Optimization
+
+### Simple Explanation
+
+Databricks automatically applies several optimizations to improve workload performance.
+
+***
+
+# 9. Integrations
+
+## Spark Alone
+
+Requires manual setup of:
+
+* JDBC Drivers
+* ODBC Drivers
+
+for BI tools and databases.
+
+***
+
+## Databricks
+
+Provides native connectors for:
+
+* Power BI
+* Tableau
+* Looker
+* Snowflake
+* Other Enterprise Systems
+
+### Remember
+
+**Databricks offers better integration capabilities with analytics and reporting tools.**
+
+***
 
 # Day 3
 
-- Creating Databricks Free edition Account
+# Databricks Overview
 
-**Databricks Overview**
-- On the left side panel we have :-
+## Workspace
 
-- Workspace : This is the main option in the workspace, where all our development work is done.
-     -> Under workspace we have > Users
-     -> In users option we try to create all kind of notebook, here only we write our PySpark code, and do all our development activity.
-     -> Then, we have create option (on right side) > here we can create folder like..(practical).
-     -> Under folder I can create any kind of notebook.
-     -> Here we can write different kind of code like R language, Scala, python, SQL.
+The **Workspace** is the main development area in Databricks.
 
--- Now, if I want to execute any code I require a computation, a cluster.
--- So, on right hand side there is one option - Connect(Serverless)
--- Here in free edition by default a serverless is available that we can use for processing.
+Most development activities are performed here.
 
--- When I rename the notebook. If i right click on the notebook with name test or something. There are so many options.
--- Like: **clone** - creating similar kind of notebook.
+### Workspace → Users
 
--- **Unity Catalog** : Here we can see all our data.
-                      -> In this we will be able to manage our data also.
-                      -> In this I can also do access control.
+Under Users, developers can:
 
--- **Jobs & pipelines** : Here we can create a job, and can also schedule them on weekly and monthly basis.
+* Create notebooks
+* Organize folders
+* Develop solutions
+* Manage project files
 
--- **Genie** : It is an AI.
+***
 
-********************************************************************************
+## Notebooks
+
+Databricks notebooks support multiple languages:
+
+* Python
+* SQL
+* Scala
+* R
+
+### Uses
+
+* Data Processing
+* Analytics
+* ETL Development
+* Machine Learning
+
+***
+
+## Compute Requirement
+
+To execute code, a compute resource is required.
+
+### Serverless Compute
+
+Databricks provides **Serverless Compute**.
+
+Benefits:
+
+* No infrastructure management
+* Faster startup
+* Easy execution
+
+### Free Edition
+
+A default Serverless option is available for processing workloads.
+
+***
+
+## Notebook Options
+
+### Clone
+
+Creates a copy of an existing notebook.
+
+Useful when:
+
+* Reusing code
+* Creating templates
+* Testing changes separately
+
+***
+
+# Unity Catalog
+
+## Definition
+
+**Unity Catalog** is Databricks' centralized governance solution.
+
+### Features
+
+* View Data Assets
+* Manage Data Assets
+* Access Control
+* Permission Management
+* Governance
+
+### Simple Explanation
+
+Unity Catalog provides centralized management and governance of organizational data.
+
+***
+
+# Jobs & Pipelines
+
+## Features
+
+* Create jobs
+* Schedule jobs
+* Weekly scheduling
+* Monthly scheduling
+* Workflow automation
+
+### Simple Explanation
+
+Jobs and Pipelines help automate repetitive data engineering tasks.
+
+***
+
+# Genie
+
+## Definition
+
+**Genie** is an AI-powered capability available in Databricks.
+
+***
 
 # Day 4
 
--- What is the Databricks Lakehouse ?
+# Databricks Lakehouse
 
--- 
+## Definition
 
+**Databricks Lakehouse** is a modern data architecture that combines the best features of both a **Data Lake** and a **Data Warehouse** in a single system.
+
+### Formula
+
+**Lakehouse = Cheap Storage + Fast Analytics + Reliable Data**
+
+***
+
+# Data Lake
+
+## Characteristics
+
+Stores:
+
+* Structured Data
+* Semi-Structured Data
+* Unstructured Data
+
+### Advantages
+
+* Low Cost
+* High Scalability
+* Flexible Storage
+
+***
+
+# Data Warehouse
+
+## Characteristics
+
+Provides:
+
+* Fast SQL Queries
+* Strong Governance
+* Reliable Data
+* Business Analytics
+
+***
+
+# What Makes Lakehouse Possible?
+
+## Delta Lake
+
+Databricks Lakehouse is built on top of **Delta Lake**.
+
+Delta Lake adds enterprise-grade reliability to a Data Lake.
+
+***
+
+# Delta Lake Features
+
+## ACID Transactions
+
+Provides safe and reliable data updates.
+
+✅ Data Consistency
+
+✅ Data Integrity
+
+✅ Transactional Reliability
+
+***
+
+## Schema Enforcement
+
+Prevents incorrect or unexpected data from being written.
+
+### Benefit
+
+Improves data quality.
+
+***
+
+## Time Travel
+
+Allows users to:
+
+* Access previous table versions
+* Restore historical data
+* Audit data changes
+
+### Benefit
+
+Supports debugging and data recovery.
+
+***
+
+## Faster Performance
+
+Provides optimized storage and query execution for analytics workloads.
+
+### Remember
+
+**Delta Lake = Data Lake + Reliability**
+
+***
+
+# Problems Solved by Lakehouse
+
+## 1. Data Silos
+
+### Before Lakehouse
+
+* Data stored in a Data Lake.
+* Analytics performed in a separate Data Warehouse.
+* Data copied between systems.
+
+### Challenges
+
+* Duplicate data
+* Extra storage costs
+* Complex ETL pipelines
+
+### Lakehouse Solution
+
+* Single platform
+* No duplicate storage
+* Fewer ETL pipelines
+* Simplified architecture
+
+### Simple Explanation
+
+Lakehouse reduces data duplication and keeps analytics closer to the data.
+
+***
+
+## 2. Reliability Problems in Traditional Data Lakes
+
+Traditional Data Lakes do not provide:
+
+* ACID Transactions
+* Schema Enforcement
+* Version Control
+* Time Travel
+
+### Lakehouse Solution
+
+Using Delta Lake provides:
+
+* Reliable transactions
+* Data validation
+* Historical version access
+* Better data quality
+
+### Simple Explanation
+
+Lakehouse makes Data Lakes suitable for enterprise-grade analytics.
+
+***
+
+## 3. Scalability and Cost Challenges
+
+### Data Warehouse
+
+* Fast analytics
+* Expensive storage
+* Mainly optimized for structured data
+
+### Data Lake
+
+* Low-cost storage
+* Supports all data types
+* May lack reliability features
+
+### Lakehouse
+
+Combines:
+
+- Low-Cost Cloud Storage
+
+- Fast SQL Analytics
+
+- Enterprise Reliability
+
+- High Scalability
+
+- Delta Lake Capabilities
+
+### Simple Explanation
+
+A Lakehouse provides the cost benefits of a Data Lake and the performance benefits of a Data Warehouse in a single architecture.
 
