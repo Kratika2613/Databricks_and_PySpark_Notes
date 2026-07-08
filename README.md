@@ -784,11 +784,11 @@ Delta Lake adds enterprise-grade reliability to a Data Lake.
 
 Provides safe and reliable data updates.
 
-✅ Data Consistency
+- Data Consistency
 
-✅ Data Integrity
+- Data Integrity
 
-✅ Transactional Reliability
+- Transactional Reliability
 
 ***
 
@@ -1187,12 +1187,6 @@ Security can be applied at:
 ### Simple Explanation
 
 Unity Catalog provides centralized governance, security, visibility, and auditing across the entire Databricks platform.
-
-***
-
-Good catch 👍. In my previous version, I only captured a few advantages from the screenshot. Based on the image, your notes should contain **all the Lakehouse advantages**.
-
-Replace the **Advantages of Databricks Lakehouse** section with this:
 
 ***
 
